@@ -6,7 +6,7 @@
 Helper functions to manipulate the URL query as a clojure map.
 
 ## Usage
-   Add `[org.clojars.frozenlock/query "0.1.0"]` to your
+   Add `[org.clojars.frozenlock/query "0.1.1"]` to your
    project dependencies.
 
 ```clojure

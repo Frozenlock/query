@@ -66,7 +66,7 @@
   bar."[smap]
   (let [p (:pathname (location))]
     (new-url (str p (to-query smap)))))
-n  
+
 (defn update-url-query
   "Update the query in the browser's URL bar." [smap]
   (let [p (:pathname (location))]
