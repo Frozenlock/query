@@ -2,14 +2,23 @@
 
 ![Query](./QuestionA.jpg)
 
+# Changelog
+	* Version 0.2.0
+	  - Majority of functions renamed and/or rewritten
 
 Helper functions to manipulate the URL query as a clojure map.
 
+*Supports nested structures!*
+
+That's right, you can use a map, inside a map, inside a map.... (Only
+the first level is converted to a normal query, everything else is
+converted to a string)
+
 ## Usage
-   Add `[org.clojars.frozenlock/query "0.1.1"]` to your
+   Add `[org.clojars.frozenlock/query "0.2.0"]` to your
    project dependencies.
 
-```clojure
+```clj
 
 (ns my-ns
   (:require [query.core :as q]))
@@ -23,33 +32,37 @@ Helper functions to manipulate the URL query as a clojure map.
 ;; We can set the browser's current query (in the URL bar) with the
 ;; following:
 
-(q/make-url-query {:some-key "hey, I'm some string"})
+(q/set-query! {:some-key "hey, I'm some string"})
  ;=> nil
 ;; (but the browser now has a query in the URL bar: ?some-key="hey%2C%20I'm%20some%20string")
 
 ;; We can retrieve the current query:
-(q/qquery)
+(q/get-query)
  ;=> {:some-key "hey, I'm some string"}
 
 ;; To update the URL query, simply give it a map with the new info in it
-(q/update-url-query {:new-info [1 2 3]})
+(q/set-query! {:new-info [1 2 3]})
 
 ;;now if we get the query again
-(q/qquery)
+(q/get-query)
  ;=> {:new-info [1 2 3], :some-key "hey, I'm some string"}
 
 ;; reset the query
-(q/clear-url-query)
+(q/clear-query!)
 
 
-;; And finally to go to a new URL with a new query
-(q/goto-href "/some/path" {:a "this is success" :b [1 2 3 4]})
+	;; And finally to go to a new URL with a new query
+(q/goto-href! "/some/path" {:a "this is success" :b [1 2 3 4]})
 ;; of course if you try this in your REPL, the browser will go to the
 ;; new page and you'll loose your REPL...
+
 ```
+
+## Testing
+Run `lein browser-test` and check the console in the opened page.
 
 ## License
 
-Copyright © 2013 Frozenlock
+Copyright © 2014 Frozenlock
 
 Distributed under the Eclipse Public License, the same as Clojure.
