@@ -73,7 +73,7 @@
 (defn set-query!
   "Convert the smap into a URL query and put it in the browser's URL
   bar."[smap]
-  (b/set-url! (.setQueryData (b/uri) (to-query* smap))))
+  (b/set-url! (str (.setQueryData (b/uri) (to-query* smap)))))
 
 
 (defn merge-in-query! 
