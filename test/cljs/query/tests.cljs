@@ -8,9 +8,10 @@
 (def test-map
   {:a "test-string"
    :b 12
-   :c [1 2 3 "a"]
-   :d [#{1 2}]
-   :e {:z :y :x [1 2 3] :w {:mm "abc"}}})
+   :c [12]
+   :d [1 2 3 "a"]
+   :e [#{1 2}]
+   :f {:z :y :x [1 2 3] :w {:mm "abc"}}})
 
 (defn queries []
   (println "Query tests...")
