@@ -67,7 +67,7 @@
   "Return the query parameters as a map from the current url, or the
   provided one." 
   ([] (get-query (b/uri)))
-  ([url] (from-query (.getQuery (b/uri url)))))
+  ([url] (from-query (.getDecodedQuery (b/uri url)))))
 
 
 (defn set-query!

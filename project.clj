@@ -1,4 +1,4 @@
-(defproject org.clojars.frozenlock/query "0.2.0"
+(defproject org.clojars.frozenlock/query "0.2.1"
   :description "Helper functions to manipulate the URL query and fragment (anchor)"
   :url "http://github.com/Frozenlock/query"
   :dependencies [[org.clojure/clojure "1.6.0"]

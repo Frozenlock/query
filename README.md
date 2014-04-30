@@ -15,7 +15,7 @@ the first level is converted to a normal query, everything else is
 converted to a string)
 
 ## Usage
-   Add `[org.clojars.frozenlock/query "0.2.0"]` to your
+   Add `[org.clojars.frozenlock/query "0.2.1"]` to your
    project dependencies.
 
 ```clj
