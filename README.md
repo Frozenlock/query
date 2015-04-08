@@ -3,6 +3,8 @@
 ![Query](./QuestionA.jpg)
 
 # Changelog
+	* Version 0.2.3
+	  - Keys provided with 'nil' values are removed from the URL query.
 	* Version 0.2.0
 	  - Majority of functions renamed and/or rewritten
 
@@ -15,8 +17,9 @@ the first level is converted to a normal query, everything else is
 converted to a string)
 
 ## Usage
-   Add `[org.clojars.frozenlock/query "0.2.3"]` to your
-   project dependencies.
+   Add the following to your project dependencies:
+
+	[![Clojars Project](http://clojars.org/org.clojars.frozenlock/query/latest-version.svg)](http://clojars.org/org.clojars.frozenlock/query)
 
 ```clj
 
@@ -63,6 +66,6 @@ Run `lein browser-test` and check the console in the opened page.
 
 ## License
 
-Copyright © 2014 Frozenlock
+Copyright © 2015 Frozenlock
 
 Distributed under the Eclipse Public License, the same as Clojure.
