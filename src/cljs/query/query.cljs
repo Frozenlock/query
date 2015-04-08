@@ -72,10 +72,18 @@
   (b/set-url! (str (.setQueryData (b/uri) (to-query* smap)))))
 
 
+(defn- clean-map
+  "Remove any keys with 'nil' as a value"
+  [m]
+  (into {} (remove (comp nil? second) m)))
+  
 (defn merge-in-query! 
-  "Merge the smap into the currenlt URL query." [smap]
+  "Merge the smap into the currenlt URL query. Nil values are
+  discarded."
+  [smap]
   (-> (get-query)
       (merge smap)
+      (clean-map) ;; remove keys with 'nil' as a value
       (set-query!)))
 
 (defn clear-query!
