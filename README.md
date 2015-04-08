@@ -19,7 +19,7 @@ converted to a string)
 ## Usage
    Add the following to your project dependencies:
 
-	[![Clojars Project](http://clojars.org/org.clojars.frozenlock/query/latest-version.svg)](http://clojars.org/org.clojars.frozenlock/query)
+[![Clojars Project](http://clojars.org/org.clojars.frozenlock/query/latest-version.svg)](http://clojars.org/org.clojars.frozenlock/query)
 
 ```clj
 
