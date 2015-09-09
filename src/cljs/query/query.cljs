@@ -30,6 +30,15 @@
               [(keyword k) (first v)])))))
         
 
+(defn encode-plus
+  [string]
+  (some-> string str (js/encodeURIComponent) (.replace "+" "%20")))
+  
+(defn pr-str-plus
+  "Same as pr-str, but encode the plus sign."
+  [string]
+  (encode-plus (pr-str string)))
+
 (defn- to-query*
   "Convert a smap to a goog query. Supports nested structures, but
   only the first level is converted into a normal query (everything
@@ -38,9 +47,9 @@
         (into {}
               (for [[k v] smap]
                 (cond
-                 (not (coll? v))  [k (pr-str v)]
-                 (map? v)         [k (pr-str v)]
-                 :else            [(str (name k) "[]") (map pr-str v)])))] ;; vectors and sets
+                 (not (coll? v))  [k (pr-str-plus v)]
+                 (map? v)         [k (pr-str-plus v)]
+                 :else            [(str (encode-plus (name k)) "[]") (map pr-str-plus v)])))] ;; vectors and sets
      (goog.Uri.QueryData.createFromMap.
       (clj->js prepared-smap))))
 
