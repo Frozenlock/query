@@ -66,6 +66,6 @@ Run `lein browser-test` and check the console in the opened page.
 
 ## License
 
-Copyright © 2015 Frozenlock
+Copyright © 2016 Frozenlock
 
 Distributed under the Eclipse Public License, the same as Clojure.
